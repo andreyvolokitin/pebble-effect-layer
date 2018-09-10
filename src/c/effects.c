@@ -622,7 +622,7 @@ void effect_mask(GContext* ctx, GRect position, void* param) {
   } else if (mask->bitmap_mask) { // othersise - bitmap mask is used - draw bimap
      graphics_draw_bitmap_in_rect(ctx, mask->bitmap_mask, GRect(0, 0, position.size.w, position.size.h));
   } else if (mask->gpath_mask) { // othersise - gpath mask is used - draw gpath
-      graphics_context_set_text_color(ctx, mask->mask_colors[0]); // for GPath using only 1st color from array of mask colors
+     graphics_context_set_fill_color(ctx, mask->mask_colors[0]); // for GPath using only 1st color from array of mask colors
      gpath_draw_filled(ctx, mask->gpath_mask);
   }
     
