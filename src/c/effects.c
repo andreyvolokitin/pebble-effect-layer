@@ -621,6 +621,8 @@ void effect_mask(GContext* ctx, GRect position, void* param) {
      graphics_draw_text(ctx, mask->text, mask->font, GRect(0, 0, position.size.w, position.size.h), mask->text_overflow, mask->text_align, NULL);
   } else if (mask->bitmap_mask) { // othersise - bitmap mask is used - draw bimap
      graphics_draw_bitmap_in_rect(ctx, mask->bitmap_mask, GRect(0, 0, position.size.w, position.size.h));
+  } else if (mask->gpath_mask) { // othersise - gpath mask is used - draw gpath
+     gpath_draw_filled(ctx, mask->gpath_mask);
   }
     
   //capturing framebuffer bitmap
@@ -789,4 +791,3 @@ void effect_outline(GContext* ctx, GRect position, void* param) {
 
   graphics_release_frame_buffer(ctx, fb);
 }
-

@@ -11,6 +11,7 @@ typedef struct {
   
 // structure of mask for masking effects
 typedef struct {
+  GPath*  gpath_mask; // GPath used for mask (when masking by GPath)
   GBitmap*  bitmap_mask; // bitmap used for mask (when masking by bitmap)
   GBitmap*  bitmap_background; // bitmap to show thru mask
   GColor*   mask_colors; //array with colors of the mask
